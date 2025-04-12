@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Josh Web Pro is a web design and development service providing modern, responsive, and functional websites.">
+    <meta name="keywords" content="web design, web development, SEO, responsive websites">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh Web Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png"size="32x32">
+
+</head>
+<body>
+
+    <div class="main" id="top">
+        <div class="navbar">
+            <div class="logo">
+    <img src="images/logo.png" alt="Josh Web Pro Logo" class="logo-img">
+    <span>JOSH WEB PRO</span>
+</div>
+
+
+            <div class="search">
+                <form id="searchForm">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#top">HOME</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#testimonials">TESTIMONIALS</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <button id="toggleMode">🌙</button>
+        </div>
+
+        <div class="intro-section">
+            <h1>Hi, I'm Josh – Web Designer & Developer</h1>
+            <p>I craft clean, modern, and responsive websites that bring ideas to life. I'm a passionate web designer and developer focused on delivering intuitive and impactful user experiences. I work with individuals, startups, and small businesses to bring ideas to life online.</p>
+            <img src="images/office-4009348.jpg" alt="Design Visual" class="intro-image">
+        </div>
+    </div>
+
+    <!-- SERVICES + TESTIMONIALS Section with shared background -->
+    <div class="services-bg">
+        <div class="services-section" id="services">
+            <h2 class="section-title">SERVICES</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <h3>Web Design</h3>
+                    <p>I design user-friendly and visually appealing websites that leave lasting impressions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Web Development</h3>
+                    <p>I build fast, responsive, and fully functional websites using modern technologies.</p>
+                </div>
+                <div class="service-card">
+                    <h3>SEO & Optimization</h3>
+                    <p>I ensure your site is optimized for search engines and performs efficiently on all devices.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials-section" id="testimonials">
+            <h2>What My Clients Say</h2>
+            <p>"Josh is a genius! My business saw real improvement after the site revamp." – Sarah D.</p>
+            <p>"Working with Josh was one of the best decisions I made!" – Kwame A.</p>
+        </div>
+
+        <div class="about-section" id="about">
+            <h2>About Me</h2>
+            <p>I'm a passionate web designer and developer focused on delivering intuitive and impactful user experiences.
+            I work with individuals, startups, and small businesses to bring ideas to life online.</p>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-section" id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/xrbpjqjn" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <textarea name="message" placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+
+        <div class="social-links">
+            <a href="https://wa.me/233537041324" target="_blank">
+                <img src="images/whats.jpeg" alt="WhatsApp" class="social-icon">
+                <span>WhatsApp</span>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/liltymer" target="_blank">
+                <img src="images/github.png" alt="GitHub" class="social-icon">
+                <span>GitHub</span>
+            </a>
+            <a href="https://twitter.com/liltymer_1" target="_blank">
+                <img src="images/twitter.png" alt="Twitter" class="social-icon">
+                <span>Twitter</span>
+            </a>
+            <a href="https://instagram.com/liltymer_1" target="_blank">
+                <img src="images/instagram-logo.jpg" alt="Instagram" class="social-icon">
+                <span>Instagram</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript for search and dark mode -->
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const query = document.getElementById("searchInput").value.toLowerCase().trim();
+            const sectionMap = {
+                "home": "top",
+                "services": "services",
+                "testimonials": "testimonials",
+                "about": "about",
+                "contact": "contact"
+            };
+            if (sectionMap[query]) {
+                document.getElementById(sectionMap[query]).scrollIntoView({ behavior: "smooth" });
+            } else {
+                alert("No matching section found.");
+            }
+        });
+
+        // Dark/Light mode toggle
+        const toggleBtn = document.getElementById("toggleMode");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        });
+    </script>
+    <script src="script.js"></script>
+    <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2025 Josh Web Pro. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#top">Home</a> |
+            <a href="#services">Services</a> |
+            <a href="#testimonials">Testimonials</a> |
+            <a href="#about">About</a> |
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
