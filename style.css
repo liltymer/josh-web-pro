@@ -342,4 +342,65 @@ body {
     object-fit: contain;
 }
 
+/* Base styles (for desktops) */
+body {
+    font-size: 16px;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .intro-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .intro-section {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .intro-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .service-card {
+        padding: 10px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
