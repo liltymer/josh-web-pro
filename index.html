@@ -7,18 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Josh Web Pro</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/logo.png"size="32x32">
-
+    <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
 </head>
 <body>
 
     <div class="main" id="top">
         <div class="navbar">
             <div class="logo">
-    <img src="images/logo.png" alt="Josh Web Pro Logo" class="logo-img">
-    <span>JOSH WEB PRO</span>
-</div>
-
+                <img src="images/logo.png" alt="Josh Web Pro Logo" class="logo-img">
+                <span>JOSH WEB PRO</span>
+            </div>
 
             <div class="search">
                 <form id="searchForm">
@@ -47,7 +45,7 @@
         </div>
     </div>
 
-    <!-- SERVICES + TESTIMONIALS Section with shared background -->
+    <!-- SERVICES + TESTIMONIALS -->
     <div class="services-bg">
         <div class="services-section" id="services">
             <h2 class="section-title">SERVICES</h2>
@@ -67,16 +65,44 @@
             </div>
         </div>
 
+        <!-- TESTIMONIALS CAROUSEL -->
         <div class="testimonials-section" id="testimonials">
             <h2>What My Clients Say</h2>
-            <p>"Josh is a genius! My business saw real improvement after the site revamp." – Sarah D.</p>
-            <p>"Working with Josh was one of the best decisions I made!" – Kwame A.</p>
+            <div class="testimonial-carousel-wrapper">
+                <div class="testimonial-carousel">
+
+                    <div class="testimonial-slide">
+                        <img src="images/client1.jpg" alt="Client 1">
+                        <div class="testimonial-text">
+                            <p>"Josh is a genius! My business saw real improvement after the site revamp."</p>
+                            <h4>– Sarah D.</h4>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <img src="images/client2.jpg" alt="Client 2">
+                        <div class="testimonial-text">
+                            <p>"Working with Josh was one of the best decisions I made!"</p>
+                            <h4>– Portia M. Smith</h4>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <img src="images/client3.jpg" alt="Client 3">
+                        <div class="testimonial-text">
+                            <p>"Professional and talented. Josh created exactly what I had in mind."</p>
+                            <h4>– Abraham k. Letsa</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
+        <!-- ABOUT -->
         <div class="about-section" id="about">
             <h2>About Me</h2>
-            <p>I'm a passionate web designer and developer focused on delivering intuitive and impactful user experiences.
-            I work with individuals, startups, and small businesses to bring ideas to life online.</p>
+            <p>I’m a versatile web developer and data analyst passionate about creating seamless digital experiences and uncovering insights through data. With expertise in Python programming, I build dynamic, user-focused websites and tackle complex datasets to drive informed decisions. My project management skills ensure every task from concept to launch is delivered on time and exceeds expectations. I also bring a creative edge through graphic design, crafting visuals that elevate functionality with style. Whether coding clean solutions, analyzing trends, or designing intuitive interfaces, I thrive on blending technical precision with creativity to solve real-world challenges..</p>
         </div>
     </div>
 
@@ -114,7 +140,21 @@
         </div>
     </div>
 
-    <!-- JavaScript for search and dark mode -->
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Josh Web Pro. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#top">Home</a> |
+                <a href="#services">Services</a> |
+                <a href="#testimonials">Testimonials</a> |
+                <a href="#about">About</a> |
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS for Search, Mode Toggle, Carousel -->
     <script>
         document.getElementById("searchForm").addEventListener("submit", function(e) {
             e.preventDefault();
@@ -133,26 +173,24 @@
             }
         });
 
-        // Dark/Light mode toggle
         const toggleBtn = document.getElementById("toggleMode");
         toggleBtn.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
             toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
         });
+
+        // Auto Slide Testimonials
+        let index = 0;
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const carousel = document.querySelector(".testimonial-carousel");
+
+        function showNextSlide() {
+            index = (index + 1) % slides.length;
+            const offset = -index * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(showNextSlide, 5000); // every 5s
     </script>
-    <script src="script.js"></script>
-    <!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-container">
-        <p>&copy; 2025 Josh Web Pro. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#top">Home</a> |
-            <a href="#services">Services</a> |
-            <a href="#testimonials">Testimonials</a> |
-            <a href="#about">About</a> |
-            <a href="#contact">Contact</a>
-        </div>
-    </div>
-</footer>
 </body>
 </html>
