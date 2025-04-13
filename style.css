@@ -421,3 +421,8 @@ body {
         gap: 10px;
     }
 }
+
+.intro-image:hover,
+.testimonial-slide img:hover {
+    transform: scale(1.08);
+}
