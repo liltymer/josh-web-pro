@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,33 @@
     <title>Josh Web Pro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
+    <style>
+        body {
+            background-color: #d3d3d3;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .portfolio-section {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .portfolio-slider {
+            display: flex;
+            width: 300%;
+            animation: slidePortfolio 12s infinite;
+        }
+        .portfolio-image {
+            width: 100vw;
+            height: auto;
+        }
+        @keyframes slidePortfolio {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100vw); }
+            66% { transform: translateX(-200vw); }
+            100% { transform: translateX(0); }
+        }
+    </style>
 </head>
 <body>
 
@@ -31,6 +58,8 @@
                     <li><a href="#services">SERVICES</a></li>
                     <li><a href="#testimonials">TESTIMONIALS</a></li>
                     <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </div>
@@ -41,7 +70,7 @@
         <div class="intro-section">
             <h1>Hi, I'm Josh – Web Designer & Developer</h1>
             <p>I craft clean, modern, and responsive websites that bring ideas to life. I'm a passionate web designer and developer focused on delivering intuitive and impactful user experiences. I work with individuals, startups, and small businesses to bring ideas to life online.</p>
-            <img src="images/office-4009348.jpg" alt="Design Visual" class="intro-image">
+            <img src="images/pexels-bhavishya-15717260.jpg" alt="Design Visual" class="intro-image">
         </div>
     </div>
 
@@ -65,12 +94,11 @@
             </div>
         </div>
 
-        <!-- TESTIMONIALS CAROUSEL -->
+        <!-- TESTIMONIALS -->
         <div class="testimonials-section" id="testimonials">
             <h2>What My Clients Say</h2>
             <div class="testimonial-carousel-wrapper">
                 <div class="testimonial-carousel">
-
                     <div class="testimonial-slide">
                         <img src="images/client1.jpg" alt="Client 1">
                         <div class="testimonial-text">
@@ -78,7 +106,6 @@
                             <h4>– Sarah D.</h4>
                         </div>
                     </div>
-
                     <div class="testimonial-slide">
                         <img src="images/client2.jpg" alt="Client 2">
                         <div class="testimonial-text">
@@ -86,7 +113,6 @@
                             <h4>– Portia M. Smith</h4>
                         </div>
                     </div>
-
                     <div class="testimonial-slide">
                         <img src="images/client3.jpg" alt="Client 3">
                         <div class="testimonial-text">
@@ -94,7 +120,6 @@
                             <h4>– Abraham k. Letsa</h4>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -102,8 +127,35 @@
         <!-- ABOUT -->
         <div class="about-section" id="about">
             <h2>About Me</h2>
-            <p>I’m a versatile web developer and data analyst passionate about creating seamless digital experiences and uncovering insights through data. With expertise in Python programming, I build dynamic, user-focused websites and tackle complex datasets to drive informed decisions. My project management skills ensure every task from concept to launch is delivered on time and exceeds expectations. I also bring a creative edge through graphic design, crafting visuals that elevate functionality with style. Whether coding clean solutions, analyzing trends, or designing intuitive interfaces, I thrive on blending technical precision with creativity to solve real-world challenges..</p>
+            <p>I’m a versatile web developer and data analyst passionate about creating seamless digital experiences and uncovering insights through data...</p>
         </div>
+    </div>
+
+    <!-- PORTFOLIO SECTION -->
+    <div class="portfolio-section" id="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="portfolio-slider">
+            <img src="images/portfolio 1.png" alt="Portfolio 1" class="portfolio-image">
+            <img src="images/portfolio 2.png" alt="Portfolio 2" class="portfolio-image">
+            <img src="images/portfolio 3.png" alt="Portfolio 3" class="portfolio-image">
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+            <summary>What services do you offer?</summary>
+            <p>I offer web design, web development, SEO, and optimization services.</p>
+        </details>
+        <details>
+            <summary>Do you work with startups or individuals?</summary>
+            <p>Yes, I work with individuals, startups, and small businesses.</p>
+        </details>
+        <details>
+            <summary>How long does it take to complete a website?</summary>
+            <p>It depends on the complexity, but typically 1–3 weeks.</p>
+        </details>
     </div>
 
     <!-- CONTACT -->
@@ -115,7 +167,6 @@
             <textarea name="message" placeholder="Your Message" required></textarea><br>
             <button type="submit">Send</button>
         </form>
-
         <div class="social-links">
             <a href="https://wa.me/233537041324" target="_blank">
                 <img src="images/whats.jpeg" alt="WhatsApp" class="social-icon">
@@ -149,12 +200,14 @@
                 <a href="#services">Services</a> |
                 <a href="#testimonials">Testimonials</a> |
                 <a href="#about">About</a> |
+                <a href="#portfolio">Portfolio</a> |
+                <a href="#faq">FAQ</a> |
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </footer>
 
-    <!-- JS for Search, Mode Toggle, Carousel -->
+    <!-- JS for Search + Dark Mode -->
     <script>
         document.getElementById("searchForm").addEventListener("submit", function(e) {
             e.preventDefault();
@@ -164,6 +217,8 @@
                 "services": "services",
                 "testimonials": "testimonials",
                 "about": "about",
+                "portfolio": "portfolio",
+                "faq": "faq",
                 "contact": "contact"
             };
             if (sectionMap[query]) {
@@ -173,24 +228,10 @@
             }
         });
 
-        const toggleBtn = document.getElementById("toggleMode");
-        toggleBtn.addEventListener("click", () => {
+        document.getElementById("toggleMode").addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
-            toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+            toggleMode.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
         });
-
-        // Auto Slide Testimonials
-        let index = 0;
-        const slides = document.querySelectorAll(".testimonial-slide");
-        const carousel = document.querySelector(".testimonial-carousel");
-
-        function showNextSlide() {
-            index = (index + 1) % slides.length;
-            const offset = -index * 100;
-            carousel.style.transform = `translateX(${offset}%)`;
-        }
-
-        setInterval(showNextSlide, 5000); // every 5s
     </script>
 </body>
 </html>
