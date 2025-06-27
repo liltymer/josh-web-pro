@@ -1,55 +1,70 @@
-// script.js
-
-// Search functionality
+// === Smooth Scroll Search ===
 document.getElementById('searchForm').addEventListener('submit', function (e) {
   e.preventDefault();
-  const keyword = document.getElementById('searchInput').value.toLowerCase();
+  const keyword = document.getElementById('searchInput').value.toLowerCase().trim();
 
   const sections = document.querySelectorAll('section, div[id]');
   let found = false;
 
   sections.forEach(section => {
-      if (section.innerText.toLowerCase().includes(keyword)) {
-          section.scrollIntoView({ behavior: 'smooth' });
-          found = true;
-      }
+    if (section.innerText.toLowerCase().includes(keyword)) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      found = true;
+    }
   });
 
   if (!found) {
-      alert("No match found!");
+    alert("No match found!");
   }
 });
 
-// Light/Dark mode toggle
-const toggleButton = document.getElementById('modeToggle');
-toggleButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  toggleButton.textContent =
-      document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
-});
+// === Dark Mode Toggle ===
+const toggleButton = document.getElementById('toggleMode');
 
-// Apply saved mode on load
-document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark-mode');
-      toggleButton.textContent = '☀️ Light Mode';
+function setTheme(mode) {
+  if (mode === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggleButton.textContent = '☀️';
+  } else {
+    document.body.classList.remove('dark-mode');
+    toggleButton.textContent = '🌙';
   }
-});
-
-// Toggle with localStorage support
-toggleButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  toggleButton.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-});
-
-let introIndex = 0;
-function showIntroSlides() {
-  const slides = document.querySelectorAll('.intro-carousel .slide');
-  slides.forEach(slide => slide.style.display = 'none');
-  introIndex = (introIndex + 1) % slides.length;
-  slides[introIndex].style.display = 'block';
-  setTimeout(showIntroSlides, 4000); // 4 seconds
 }
-showIntroSlides();
+
+// Load saved theme
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  setTheme(savedTheme);
+});
+
+// Toggle + Save
+toggleButton.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  toggleButton.textContent = isDark ? '☀️' : '🌙';
+});
+
+// === Portfolio Auto Slide ===
+let portfolioIndex = 0;
+function slidePortfolio() {
+  const slider = document.querySelector('.portfolio-slider');
+  if (!slider) return;
+
+  portfolioIndex = (portfolioIndex + 1) % 3; // Assuming 3 slides
+  slider.style.transform = `translateX(-${portfolioIndex * 100}vw)`;
+}
+
+setInterval(slidePortfolio, 4000); // 4s interval
+
+// === Testimonial Auto Slide ===
+let testimonialIndex = 0;
+const testimonialSlider = document.querySelector('.testimonial-carousel');
+const testimonialSlides = testimonialSlider?.children.length || 3;
+
+function slideTestimonials() {
+  testimonialIndex = (testimonialIndex + 1) % testimonialSlides;
+  testimonialSlider.style.transform = `translateX(-${testimonialIndex * 100}vw)`;
+}
+
+setInterval(slideTestimonials, 5000); // every 5 seconds
+
