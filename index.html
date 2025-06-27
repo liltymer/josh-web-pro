@@ -1,237 +1,162 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Josh Web Pro is a web design and development service providing modern, responsive, and functional websites.">
-    <meta name="keywords" content="web design, web development, SEO, responsive websites">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Josh Web Pro</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
-    <style>
-        body {
-            background-color: #d3d3d3;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .portfolio-section {
-            max-width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-        .portfolio-slider {
-            display: flex;
-            width: 300%;
-            animation: slidePortfolio 12s infinite;
-        }
-        .portfolio-image {
-            width: 100vw;
-            height: auto;
-        }
-        @keyframes slidePortfolio {
-            0% { transform: translateX(0); }
-            33% { transform: translateX(-100vw); }
-            66% { transform: translateX(-200vw); }
-            100% { transform: translateX(0); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Josh Web Pro: Modern, responsive, and functional websites" />
+  <meta name="keywords" content="web design, development, SEO, responsive" />
+  <title>Josh Web Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32" />
 </head>
 <body>
 
-    <div class="main" id="top">
-        <div class="navbar">
-            <div class="logo">
-                <img src="images/logo.png" alt="Josh Web Pro Logo" class="logo-img">
-                <span>JOSH WEB PRO</span>
-            </div>
-
-            <div class="search">
-                <form id="searchForm">
-                    <input type="text" id="searchInput" placeholder="Search...">
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-
-            <div class="menu">
-                <ul>
-                    <li><a href="#top">HOME</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#testimonials">TESTIMONIALS</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#portfolio">PORTFOLIO</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </div>
-
-            <button id="toggleMode">🌙</button>
-        </div>
-
-        <div class="intro-section">
-            <h1>Hi, I'm Josh – Web Designer & Developer</h1>
-            <p>I craft clean, modern, and responsive websites that bring ideas to life. I'm a passionate web designer and developer focused on delivering intuitive and impactful user experiences. I work with individuals, startups, and small businesses to bring ideas to life online.</p>
-            <img src="images/pexels-bhavishya-15717260.jpg" alt="Design Visual" class="intro-image">
-        </div>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Josh Web Pro Logo" class="logo-img" />
+      <span>JOSH WEB PRO</span>
     </div>
-
-    <!-- SERVICES + TESTIMONIALS -->
-    <div class="services-bg">
-        <div class="services-section" id="services">
-            <h2 class="section-title">SERVICES</h2>
-            <div class="services-container">
-                <div class="service-card">
-                    <h3>Web Design</h3>
-                    <p>I design user-friendly and visually appealing websites that leave lasting impressions.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Web Development</h3>
-                    <p>I build fast, responsive, and fully functional websites using modern technologies.</p>
-                </div>
-                <div class="service-card">
-                    <h3>SEO & Optimization</h3>
-                    <p>I ensure your site is optimized for search engines and performs efficiently on all devices.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- TESTIMONIALS -->
-        <div class="testimonials-section" id="testimonials">
-            <h2>What My Clients Say</h2>
-            <div class="testimonial-carousel-wrapper">
-                <div class="testimonial-carousel">
-                    <div class="testimonial-slide">
-                        <img src="images/client1.jpg" alt="Client 1">
-                        <div class="testimonial-text">
-                            <p>"Josh is a genius! My business saw real improvement after the site revamp."</p>
-                            <h4>– Sarah D.</h4>
-                        </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <img src="images/client2.jpg" alt="Client 2">
-                        <div class="testimonial-text">
-                            <p>"Working with Josh was one of the best decisions I made!"</p>
-                            <h4>– Portia M. Smith</h4>
-                        </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <img src="images/client3.jpg" alt="Client 3">
-                        <div class="testimonial-text">
-                            <p>"Professional and talented. Josh created exactly what I had in mind."</p>
-                            <h4>– Abraham k. Letsa</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ABOUT -->
-        <div class="about-section" id="about">
-            <h2>About Me</h2>
-            <p>I’m a versatile web developer and data analyst passionate about creating seamless digital experiences and uncovering insights through data...</p>
-        </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="search">
+      <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <button type="submit">Search</button>
+      </form>
     </div>
+    <button id="toggleMode">🌙</button>
+  </header>
 
-    <!-- PORTFOLIO SECTION -->
-    <div class="portfolio-section" id="portfolio">
-        <h2>My Portfolio</h2>
-        <div class="portfolio-slider">
-            <img src="images/portfolio 1.png" alt="Portfolio 1" class="portfolio-image">
-            <img src="images/portfolio 2.png" alt="Portfolio 2" class="portfolio-image">
-            <img src="images/portfolio 3.png" alt="Portfolio 3" class="portfolio-image">
-        </div>
+  <!-- Intro -->
+  <section class="intro-section" id="top">
+    <p class="welcome-note">Hi, You Are Welcome To The Official Website Of <strong>Josh Web Pro</strong></p>
+    <p>We craft clean, modern, and responsive websites that bring ideas to life. We work with startups and individuals to deliver intuitive digital experiences.</p>
+    <img src="images/pexels-bhavishya-15717260.jpg" alt="Developer workspace" class="intro-image" />
+  </section>
+
+  <!-- Services -->
+  <section class="services-section" id="services">
+    <h2>OUR SERVICES</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <h3>Web Design</h3>
+        <p>Beautiful, user-centered design that communicates clearly and effectively.</p>
+      </div>
+      <div class="service-card">
+        <h3>Web Development</h3>
+        <p>Modern, fast, responsive development using HTML, CSS, JS, and frameworks.</p>
+      </div>
+      <div class="service-card">
+        <h3>SEO & Optimization</h3>
+        <p>Technical SEO, accessibility, and performance tuning for real results.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- FAQ SECTION -->
-    <div class="faq-section" id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <details>
-            <summary>What services do you offer?</summary>
-            <p>I offer web design, web development, SEO, and optimization services.</p>
-        </details>
-        <details>
-            <summary>Do you work with startups or individuals?</summary>
-            <p>Yes, I work with individuals, startups, and small businesses.</p>
-        </details>
-        <details>
-            <summary>How long does it take to complete a website?</summary>
-            <p>It depends on the complexity, but typically 1–3 weeks.</p>
-        </details>
+  <!-- Testimonials -->
+  <section class="testimonials-section" id="testimonials">
+    <h2> FEDBACK FROM CLIENTS</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial-slide">
+        <img src="images/client1.jpg" alt="Client Sarah D." loading="lazy"/>
+        <blockquote>"Josh is a genius! My business saw real improvement after the site revamp."</blockquote>
+        <cite>– Sarah D.</cite>
+      </div>
+      <div class="testimonial-slide">
+        <img src="images/client2.jpg" alt="Client Portia M. Smith" />
+        <blockquote>"Working with Josh was one of the best decisions I made!"</blockquote>
+        <cite>– Portia M. Smith</cite>
+      </div>
+      <div class="testimonial-slide">
+        <img src="images/client3.jpg" alt="Client Abraham K. Letsa" loading="lazy"/>
+        <blockquote>"Professional and talented. Josh created exactly what I had in mind."</blockquote>
+        <cite>– Abraham K. Letsa</cite>
+      </div>
     </div>
+  </section>
 
-    <!-- CONTACT -->
-    <div class="contact-section" id="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/xrbpjqjn" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email" required><br>
-            <textarea name="message" placeholder="Your Message" required></textarea><br>
-            <button type="submit">Send</button>
-        </form>
-        <div class="social-links">
-            <a href="https://wa.me/233537041324" target="_blank">
-                <img src="images/whats.jpeg" alt="WhatsApp" class="social-icon">
-                <span>WhatsApp</span>
-            </a>
-            <a href="https://www.linkedin.com/in/joshua-owusu-ahenkora-42a691320" target="_blank">
-                <img src="images/LinkedIn.png" alt="LinkedIn" class="social-icon">
-                <span>LinkedIn</span>
-            </a>
-            <a href="https://github.com/liltymer" target="_blank">
-                <img src="images/github.png" alt="GitHub" class="social-icon">
-                <span>GitHub</span>
-            </a>
-            <a href="https://twitter.com/liltymer_1" target="_blank">
-                <img src="images/twitter.png" alt="Twitter" class="social-icon">
-                <span>Twitter</span>
-            </a>
-            <a href="https://instagram.com/liltymer_1" target="_blank">
-                <img src="images/instagram-logo.jpg" alt="Instagram" class="social-icon">
-                <span>Instagram</span>
-            </a>
-        </div>
+
+  <!-- Portfolio -->
+  <section class="portfolio-section" id="portfolio">
+    <h2>OUR PORTFOLIO</h2>
+    <div class="portfolio-slider">
+      <img src="images/portfolio 1.png" alt="Landing Page Project" class="portfolio-image" />
+      <img src="images/portfolio 2.png" alt="Business Website Project" class="portfolio-image" />
+      <img src="images/portfolio 3.png" alt="eCommerce Project" class="portfolio-image" />
     </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2025 Josh Web Pro. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#top">Home</a> |
-                <a href="#services">Services</a> |
-                <a href="#testimonials">Testimonials</a> |
-                <a href="#about">About</a> |
-                <a href="#portfolio">Portfolio</a> |
-                <a href="#faq">FAQ</a> |
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </footer>
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>What services do you offer?</summary>
+      <p>Web design, development, SEO, and optimization.</p>
+    </details>
+    <details>
+      <summary>Do you work with startups or individuals?</summary>
+      <p>Absolutely, I specialize in working with startups and individuals.</p>
+    </details>
+    <details>
+      <summary>How long does it take to complete a website?</summary>
+      <p>Typically 1–3 weeks depending on complexity.</p>
+    </details>
+  </section>
 
-    <!-- JS for Search + Dark Mode -->
-    <script>
-        document.getElementById("searchForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-            const query = document.getElementById("searchInput").value.toLowerCase().trim();
-            const sectionMap = {
-                "home": "top",
-                "services": "services",
-                "testimonials": "testimonials",
-                "about": "about",
-                "portfolio": "portfolio",
-                "faq": "faq",
-                "contact": "contact"
-            };
-            if (sectionMap[query]) {
-                document.getElementById(sectionMap[query]).scrollIntoView({ behavior: "smooth" });
-            } else {
-                alert("No matching section found.");
-            }
-        });
+  <!-- Contact -->
+  <section class="contact-section" id="contact">
+    <h2>CONTACT US</h2>
+    <form action="https://formspree.io/f/xrbpjqjn" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
 
-        document.getElementById("toggleMode").addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-            toggleMode.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-        });
-    </script>
+    <!-- Social Icons (CSS-flexbox/grid styled later) -->
+    <div class="social-links">
+      <a href="https://wa.me/233537041324" target="_blank" aria-label="WhatsApp">
+        <img src="images/whats.jpeg" alt="WhatsApp Icon" class="social-icon" />
+      </a>
+      <a href="https://www.linkedin.com/in/joshua-owusu-ahenkora-42a691320" target="_blank" aria-label="LinkedIn">
+        <img src="images/LinkedIn.png" alt="LinkedIn Icon" class="social-icon" />
+      </a>
+      <a href="https://github.com/liltymer" target="_blank" aria-label="GitHub">
+        <img src="images/github.png" alt="GitHub Icon" class="social-icon" />
+      </a>
+      <a href="https://twitter.com/liltymer_1" target="_blank" aria-label="Twitter">
+        <img src="images/twitter.png" alt="Twitter Icon" class="social-icon" />
+      </a>
+      <a href="https://instagram.com/liltymer_1" target="_blank" aria-label="Instagram">
+        <img src="images/instagram-logo.jpg" alt="Instagram Icon" class="social-icon" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Josh Web Pro. All rights reserved.</p>
+    <nav class="footer-links">
+      <a href="#top">Home</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
+
