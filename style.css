@@ -89,7 +89,7 @@ body {
 }
 
 .welcome-note {
-  font-size: 22px;
+  font-size: 40px;
   color: #ffcc00;
   margin-bottom: 20px;
   animation: fadeInGlow 1.6s ease-out;
